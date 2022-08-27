@@ -27,9 +27,9 @@ app.get("/form",(req,res)=>{
 })
 //creat a new message
 app.post("/new",(req,res)=>{
-    messages.push({message:req.body.message,name:req.body.name})
+    messages.push({message:req.body.message,name:req.body.name,submitted:new Date()})
     res.redirect("/")
-    
+       
 })
 
 app.listen(port,()=>{console.log(`the server is listenng on port ${port}...`)})
